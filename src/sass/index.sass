@@ -1,0 +1,23 @@
+@use './_variables'
+    
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Poppins', sans-serif
+    font-weight: 300
+    
+
+body
+    background: variables.$body-color
+    width: 100%
+    min-height: 100dvh
+    display: grid
+    place-content: center
+
+    .container
+        display: flex
+        justify-content: center
+        border:  solid 1px variables.$text-color
+        border-radius: 20px
+        padding: 20px
