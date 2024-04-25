@@ -1,25 +1,23 @@
 import { createContext, useState, ReactNode } from "react";
 
-interface PomodoroStatus {
+export interface PomodoroStatusProps {
   status: string;
-  toggleStatus: () => void;
+  toggleStatus: (status: string) => void;
 }
 
 interface PomodoroStatusProviderProps {
   children: ReactNode;
 }
 
-export const PomodoroStatusContext = createContext<PomodoroStatus | undefined>(
-  undefined
-);
+export const PomodoroStatusContext = createContext<PomodoroStatusProps>();
 
 export const PomodoroStatusProvider = ({
   children,
 }: PomodoroStatusProviderProps) => {
   const [status, setStatus] = useState<string>("");
 
-  const toggleStatus = () => {
-    setStatus(status === "working" ? "" : "working");
+  const toggleStatus = (status: string) => {
+    setStatus(status);
   };
 
   return (
